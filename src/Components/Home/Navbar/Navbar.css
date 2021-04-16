@@ -1,0 +1,7 @@
+li{
+    font-size: 20px;
+}
+li a:hover{
+    background-color:white;
+    color: red;
+}
