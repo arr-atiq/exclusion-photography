@@ -3,7 +3,7 @@ import banner from '../../../Images/banner.jpg';
 
 const BannerSection = () => {
     return (
-        <section className="banner-section d-flex justify-content-center">
+        <section className="banner-section d-flex justify-content-center mb-5 pb-5">
             <div className="container row mt-5 pt-5">
                 <div className="col-md-6 text-center mt-5 pt-5">
                     <h2>Capturing the moments <br/>That captivate your heart</h2>
