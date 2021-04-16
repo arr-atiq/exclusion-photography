@@ -53,7 +53,7 @@ const portfolioData = [
 ]
 const Portfolio = () => {
     return (
-        <div style={{ margin: '0' }} className="row mt-5 mb-5 pt-5">
+        <div style={{ margin: '0' }} className="row mt-5 mb-5 pt-5 text-center">
             <div className="info-tag text-center mb-5">
                 <h2 className="text-primary">Our Portfolio</h2>
                 <h4>The Latest Photography Till Now</h4>
