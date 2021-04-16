@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddService.css';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
@@ -46,12 +47,14 @@ const AddService = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-8">
-                    <form className="admin-form" onSubmit={handleSubmit(onSubmit)}>
-
-                        <input name="name" placeholder="Service Title" {...register('name')} />
-                        <input name="description" placeholder="Enter Description" {...register('description')} />
-                        <input name="ChooseAFile" type="file" onChange={handleImageChange} />
-                        <input type="submit" />
+                    <form className="admin-form designForm" onSubmit={handleSubmit(onSubmit)}>
+                        <input name="name" className="form-control" placeholder="Service Title" {...register('name')} />
+                        <br/>
+                        <input name="description" className="form-control" placeholder="Enter Description" {...register('description')} />
+                        <br/>
+                        <input name="ChooseAFile" className="form-control" type="file" onChange={handleImageChange} />
+                        <br/>
+                        <input type="submit" className="submitBtn btn-info text-white" />
                     </form>
                 </div>
             </div>
