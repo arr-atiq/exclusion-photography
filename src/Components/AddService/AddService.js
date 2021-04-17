@@ -47,6 +47,7 @@ const AddService = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-8">
+                <h3 className="text-center mt-5 text-danger">Add A Service!</h3>
                     <form className="admin-form designForm" onSubmit={handleSubmit(onSubmit)}>
                         <input name="name" className="form-control" placeholder="Service Title" {...register('name')} />
                         <br/>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home/Home';
 import {
@@ -18,49 +18,55 @@ import ConfirmBooking from './Components/ConfirmBooking/ConfirmBooking';
 import BookingList from './Components/BookingList/BookingList';
 import Review from './Components/Review/Review';
 
+
+export const UserContext = createContext();
 const App = () => {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
-      <Navbar></Navbar>
-      <Switch>
-        <Route path="/home">
-          <Home></Home>
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard></Dashboard>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        <Route path="/orderList">
-          <OrderList></OrderList>
-        </Route>
-        <Route path="/addService">
-          <AddService></AddService>
-        </Route>
-        <Route path="/makeAdmin">
-          <MakeAdmin></MakeAdmin>
-        </Route>
-        <Route path="/manageServices">
-          <ManageServices></ManageServices>
-        </Route>
-        <Route path="/confirmBooking">
-          <ConfirmBooking></ConfirmBooking>
-        </Route>
-        <Route path="/bookingList">
-          <BookingList></BookingList>
-        </Route>
-        <Route path="/review">
-          <Review></Review>
-        </Route>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route path="*">
-          <NoMatch></NoMatch>
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>Name: {loggedInUser.name}</p>
+      <Router>
+        <Navbar></Navbar>
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/orderList">
+            <OrderList></OrderList>
+          </Route>
+          <Route path="/addService">
+            <AddService></AddService>
+          </Route>
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path="/manageServices">
+            <ManageServices></ManageServices>
+          </Route>
+          <Route path="/confirmBooking">
+            <ConfirmBooking></ConfirmBooking>
+          </Route>
+          <Route path="/bookingList">
+            <BookingList></BookingList>
+          </Route>
+          <Route path="/review">
+            <Review></Review>
+          </Route>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="*">
+            <NoMatch></NoMatch>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 };
 
