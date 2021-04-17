@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <section className="container pt-5">
             <div className="text-center mb-5">
-                <h2>Our Services</h2>
+                <h2 className="text-primary">Our Services</h2>
                 <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
             </div>
             <div style={{margin:"0"}} className="row">
