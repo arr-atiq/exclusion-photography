@@ -49,18 +49,25 @@ const portfolioData = [
         name: 'Weeding Shot in Temple',
         img: weeding,
         location: 'Dhaka, Bangladesh'
+    },
+    {
+        name: 'World Class Interior',
+        img: interior,
+        location: 'Dhaka, Bangladesh'
     }
 ]
 const Portfolio = () => {
     return (
-        <div style={{ margin: '0' }} className="row mt-5 mb-5 pt-5 text-center">
-            <div className="info-tag text-center mb-5">
-                <h2 className="text-primary">Our Portfolio</h2>
-                <h4>The Latest Photography Till Now</h4>
+        <div className="container">
+            <div style={{ margin: '0' }} className="row mt-5 mb-5 pt-5 text-center">
+                <div className="info-tag text-center mb-5">
+                    <h2 className="text-primary">Our Portfolio</h2>
+                    <h4>The Latest Photography Till Now</h4>
+                </div>
+                {
+                    portfolioData.map(portfolio => <PortfolioDetail workSample={portfolio}></PortfolioDetail>)
+                }
             </div>
-            {
-                portfolioData.map(portfolio => <PortfolioDetail workSample={portfolio}></PortfolioDetail>)
-            }
         </div>
     );
 };
