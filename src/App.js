@@ -17,6 +17,7 @@ import ManageServices from './Components/ManageServices/ManageServices';
 import ConfirmBooking from './Components/ConfirmBooking/ConfirmBooking';
 import BookingList from './Components/BookingList/BookingList';
 import Review from './Components/Review/Review';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
 
 export const UserContext = createContext();
@@ -24,16 +25,16 @@ const App = () => {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.name}</p>
       <Router>
         <Navbar></Navbar>
+        {/* <p style={{marginTop: "50px", color: "green"}}>Name: {loggedInUser.name}</p> */}
         <Switch>
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>

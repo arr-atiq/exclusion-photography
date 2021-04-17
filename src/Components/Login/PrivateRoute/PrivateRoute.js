@@ -1,8 +1,8 @@
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
 import jwt_decode from "jwt-decode";
-
 
 const PrivateRoute = ({children, ...rest}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);

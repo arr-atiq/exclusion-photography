@@ -9,11 +9,19 @@ const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const onSubmit = data => {
 
-        // const productData = {
-        //     name: data.name,
-        //     Description: data.description,
-        //     productUrl: productUrl
-        // }
+        const productData = {
+            reviewData: data,
+            ...loggedInUser
+        }
+        const url = `http://localhost:8000/addReview`;
+        fetch(url, {
+            method: 'POST',
+            headers: { 'content-Type': 'application/json' },
+            body: JSON.stringify(productData)
+        })
+            .then(res => {
+                alert("Review added successfully")
+            })
     }
     return (
         <section>
@@ -24,12 +32,12 @@ const Review = () => {
                 <div className="col-md-8">
                     <h3 className="text-center mt-5 text-danger">Add Your Valuable Review!</h3>
                     <form className="admin-form designForm" onSubmit={handleSubmit(onSubmit)}>
-                        <input name="name" className="form-control" placeholder="Service Title" {...register('name')} />
-                        <br/>
+                        <input name="name" className="form-control" placeholder="Your Name" {...register('name')} />
+                        <br />
                         <input name="designation" className="form-control" placeholder="Enter Designation" {...register('designation')} />
-                        <br/>
+                        <br />
                         <textarea name="description" className="form-control" placeholder="Enter Description" {...register('description')}></textarea>
-                        <br/>
+                        <br />
                         <input type="submit" className="submitBtn btn-info text-white" />
                     </form>
                 </div>

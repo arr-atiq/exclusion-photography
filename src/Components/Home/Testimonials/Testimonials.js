@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import TestimonialsDetail from './TestimonialsDetail/TestimonialsDetail';
 
 const Testimonials = () => {
+
+    const [allReviews, setAllReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8000/allReviews')
+            .then(res => res.json())
+            .then(data => setAllReviews(data))
+    }, [])
+
     return (
-        <div>
-            
-        </div>
+        <section className="container pt-5">
+            <div className="text-center mb-5">
+                <h2>Client Review</h2>
+                <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+            </div>
+            <div style={{margin:"0"}} className="row">
+                {
+                    allReviews.map((reviews) => <TestimonialsDetail reviews={reviews}></TestimonialsDetail>)
+                }
+            </div>
+        </section>
     );
 };
 

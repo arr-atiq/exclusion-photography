@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../App';
 import './Navbar.css';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <nav class="navbar navbar-expand-lg navbar-primary bg-dark fixed-top">
             <div class="container-fluid">
@@ -28,6 +30,9 @@ const Navbar = () => {
                         </li>
                         <li class="nav-item me-5">
                             <a class="nav-link bg-danger text-white" href="login">Login</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <p class="nav-link bg-danger text-white" href="#">Name: {loggedInUser.name}</p>
                         </li>
                     </ul>
                 </div>
