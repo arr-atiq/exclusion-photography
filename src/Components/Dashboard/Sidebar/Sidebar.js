@@ -23,13 +23,12 @@ const Sidebar = () => {
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2  py-5 px-4">
             <ul className="list-unstyled">
-
                 <li>
                     <Link to="/" >
                         <FontAwesomeIcon icon={faHome} /> <a href="/home">Home</a>
                     </Link>
                 </li>
-                {isPhotographer &&<div>
+                {isPhotographer && <div>
                     <li>
                         <Link to="/orderList" >
                             <FontAwesomeIcon icon={faListUl} /> <a href="/order">Order List</a>
@@ -63,7 +62,7 @@ const Sidebar = () => {
                 </li>
             </ul>
             <div>
-                <Link to="/" ><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
+                <Link to="/" style={{ color: "white" }}><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
             </div>
         </div>
     );
