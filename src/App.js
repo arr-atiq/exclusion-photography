@@ -17,7 +17,7 @@ import ManageServices from './Components/ManageServices/ManageServices';
 import ConfirmBooking from './Components/ConfirmBooking/ConfirmBooking';
 import BookingList from './Components/BookingList/BookingList';
 import Review from './Components/Review/Review';
-import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 export const UserContext = createContext();

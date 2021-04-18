@@ -20,12 +20,15 @@ const Login = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
       const { displayName, email, photoURL } = result.user;
-      const signedInUser = { isSignedIn: true,
+      const signedInUser = {
+        isSignedIn: true,
         name: displayName,
         email: email,
-        photo: photoURL }
+        photo: photoURL
+      }
       setLoggedInUser(signedInUser);
       storeAuthToken();
+      history.replace(from);
     }).catch(function (error) {
       const errorMessage = error.message;
       console.log(errorMessage);
@@ -36,16 +39,18 @@ const Login = () => {
     firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
       .then(function (idToken) {
         sessionStorage.setItem('token', idToken);
-        history.replace(from);
       }).catch(function (error) {
         // Handle error
       });
   }
 
   return (
-    <div className="login-page container">
-      <div className="row align-items-center" style={{ height: "100vh" }}>
-        <div className="col-md-6 shadow p-5">
+    <div className="login-page container ">
+      <div className="row align-items-center mx-auto" style={{ width: '500px', height: "100vh" }}>
+        <div className="col-md-12 shadow p-5">
+          <div className="from-group mb-3">
+            <button className="btn btn-primary form-control" onClick={handleGoogleSignIn}>Google Sign in</button>
+          </div>
           <div className="form-group">
             <label htmlFor="">User Name</label>
             <input type="text" className="form-control" />
@@ -56,9 +61,6 @@ const Login = () => {
           </div>
           <div className="form-group">
             <label htmlFor="" className="text-danger">Forgot your password?</label>
-          </div>
-          <div className="from-group mt-5">
-            <button className="btn btn-brand" onClick={handleGoogleSignIn}>Google Sign in</button>
           </div>
         </div>
       </div>
