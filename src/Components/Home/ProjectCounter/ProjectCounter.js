@@ -70,7 +70,7 @@ const ProjectCounter = () => {
                 <div className="pro-counter col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
                     <i><FontAwesomeIcon icon={faFeatherAlt} /></i>
                     <p id="number4" >12</p>
-                    <p>Famous Writers</p>
+                    <p>Famous Photographers</p>
                 </div>
             </div>
         </div>
