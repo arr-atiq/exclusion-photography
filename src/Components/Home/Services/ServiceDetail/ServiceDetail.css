@@ -2,3 +2,8 @@
     width:50%;
     margin: 10px;
 }
+.newIcon:hover{
+    color: red !important;
+    transform: rotateX(150deg);
+    transition-duration: 1s;
+}
