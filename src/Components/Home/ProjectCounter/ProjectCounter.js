@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProjectCounter.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFeatherAlt, faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 
@@ -51,28 +52,24 @@ const ProjectCounter = () => {
         <div className="container">
             <h2 className="text-center text-primary mt-4 mb-5 pt-5">Projects statistics</h2>
             <div style={{ margin:"0"}} class="row d-flex justify-content-center">
-                <div className="col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
+                <div className="pro-counter col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
                     <i><FontAwesomeIcon icon={faUser} /></i>
-                    <p id="number1" class="number">125,663</p>
-                    <span></span>
+                    <p id="number1" >125,663+</p>
                     <p>Happy Customers</p>
                 </div>
-                <div className="col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
+                <div className="pro-counter col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
                     <i><FontAwesomeIcon icon={faProjectDiagram} /></i>
-                    <p id="number2" class="number">57+</p>
-                    <span></span>
+                    <p id="number2" >57+</p>
                     <p>Running Project</p>
                 </div>
-                <div className="col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
+                <div className="pro-counter col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
                     <i><FontAwesomeIcon icon={faUser} /></i>
-                    <p id="number3" class="number">120</p>
-                    <span></span>
+                    <p id="number3" >120</p>
                     <p>Our Clients</p>
                 </div>
-                <div className="col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
+                <div className="pro-counter col-md-3 text-center mt-5 mb-5 mt-5 mt-4">
                     <i><FontAwesomeIcon icon={faFeatherAlt} /></i>
-                    <p id="number4" class="number">12</p>
-                    <span></span>
+                    <p id="number4" >12</p>
                     <p>Famous Writers</p>
                 </div>
             </div>
