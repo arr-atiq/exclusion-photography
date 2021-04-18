@@ -18,6 +18,7 @@ import ConfirmBooking from './Components/ConfirmBooking/ConfirmBooking';
 import BookingList from './Components/BookingList/BookingList';
 import Review from './Components/Review/Review';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Checkout from './Components/Checkout/Checkout';
 
 
 export const UserContext = createContext();
@@ -27,13 +28,15 @@ const App = () => {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Navbar></Navbar>
-        {/* <p style={{marginTop: "50px", color: "green"}}>Name: {loggedInUser.name}</p> */}
         <Switch>
           <Route path="/home">
             <Home></Home>
           </Route>
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/checkout/:serviceId">
+            <Checkout></Checkout>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
