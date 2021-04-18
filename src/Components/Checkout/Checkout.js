@@ -2,14 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const Checkout = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const { serviceId } = useParams();
-
     const [orderService, setOrderService] = useState({});
-    console.log("service:",orderService);
+    const [shippingData, setShippingData] = useState(null);
 
     useEffect(() => {
         const url = `http://localhost:8000/ServiceProduct/${serviceId}`
@@ -19,8 +19,18 @@ const Checkout = () => {
     }, [])
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const onSubmit = (data) => {
-        const allPlaceNewOrder = { ...loggedInUser, orderService, shipment: data, orderTime: new Date() }
+        setShippingData(data);
+    }
+
+    const handlePaymentSuccess = paymentId =>{
+        const allPlaceNewOrder = { 
+            ...loggedInUser,
+             orderService,
+              shipment: shippingData, 
+              paymentId,
+              orderTime: new Date() }
         const url = 'http://localhost:8000/orderPlace';
         fetch(url, {
             method: 'POST',
@@ -36,7 +46,7 @@ const Checkout = () => {
 
         <section className="mt-5 pt-5">
             <div className="row">
-                <div className="col-md-6">
+                <div style={{display: shippingData ? 'none': 'block'}} className="col-md-6">
                     <form className="admin-form designForm" onSubmit={handleSubmit(onSubmit)}>
                         <input name="name" className="form-control" placeholder="Enter Your Name" {...register('name')} />
                         <br />
@@ -49,8 +59,9 @@ const Checkout = () => {
                         <input type="submit" className="submitBtn btn-info text-white" />
                     </form>
                 </div>
-                <div className="col-md-6">
-
+                <div style={{display: shippingData ? 'block': 'none'}} className="col-md-6">
+                    <h3>Please Confirm Your Payment</h3>
+                    <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
                 </div>
             </div>
         </section>
