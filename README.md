@@ -1,4 +1,8 @@
+website live link: (https://exclusions-photography.web.app/home)
 
+client side repository: (https://github.com/Porgramming-Hero-web-course/complete-website-client-arr-atiq)
+
+server side repository: (https://github.com/Porgramming-Hero-web-course/complete-website-server-arr-atiq)
 
 home page done
 set private route
