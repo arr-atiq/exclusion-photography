@@ -3,7 +3,7 @@ import './ServiceDetail.css';
 import { useHistory } from 'react-router';
 
 const ServiceDetail = (props) => {
-    const {name, productUrl, Description, _id} = props.service;
+    const {name,price, productUrl, Description, _id} = props.service;
 
     const history = useHistory();
     const handleClick = serviceId => {
@@ -15,6 +15,7 @@ const ServiceDetail = (props) => {
                 <img style={{width: "100%", height: "400px",  }} src={productUrl} alt="" />
                 <h4 className="mt-3 text-warning">{name}</h4>
                 <h5>{Description}</h5>
+                <h5>${price}</h5>
                 <button onClick={()=>handleClick(_id)} className="btn btn-info text-white bookNow mx-auto">Book Now</button>
             </div>
         </div>

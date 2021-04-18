@@ -31,7 +31,7 @@ const Sidebar = () => {
                 {isPhotographer && <div>
                     <li>
                         <Link to="/orderList" >
-                            <FontAwesomeIcon icon={faListUl} /> <a href="/order">Order List</a>
+                            <FontAwesomeIcon icon={faListUl} /> <a href="/order">Service List</a>
                         </Link>
                     </li>
                     <li>

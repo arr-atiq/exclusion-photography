@@ -10,7 +10,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import Login from './Components/Login/Login/Login';
 import NoMatch from './Components/NoMatch/NoMatch';
-import OrderList from './Components/OrderList/OrderList';
+import OrderList from './Components/ServiceList/ServiceList';
 import AddService from './Components/AddService/AddService';
 import MakeAdmin from './Components/MakeAdmin/MakeAdmin';
 import ManageServices from './Components/ManageServices/ManageServices';

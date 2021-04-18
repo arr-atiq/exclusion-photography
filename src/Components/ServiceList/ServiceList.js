@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './BookList.css';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
-import BookingListDetail from './BookingListDetail/BookingListDetail';
+import ServiceListDetail from './ServiceListDetail/ServiceListDetail';
 
-const BookingList = () => {
-
-    const [booking, setBookingList] = useState([])
+const ServiceList = () => {
+    const [serviceList, setServiceList] = useState([])
     useEffect(() => {
-        const url = 'http://localhost:8000/allPlaceOrders';
+        const url = 'http://localhost:8000/allServices';
         fetch(url)
             .then(res => res.json())
-            .then(data => setBookingList(data))
+            .then(data => setServiceList(data))
     }, [])
 
     return (
@@ -21,18 +19,17 @@ const BookingList = () => {
             <div className="col-md-8 mt-5">
                 <table id="table">
                     <tr>
-                        <th>Service</th>
+                        <th>Service Name</th>
                         <th>Price</th>
-                        <th>Address</th>
                         <th>Delete Order</th>
                     </tr>
                 </table>
                 {
-                    booking.map(order => <BookingListDetail order={order}></BookingListDetail>)
+                    serviceList.map(serviceListItem => <ServiceListDetail serviceList={serviceListItem}></ServiceListDetail>)
                 }
             </div>
         </div>
     );
 };
 
-export default BookingList;
+export default ServiceList;
