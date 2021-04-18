@@ -12,7 +12,7 @@ const Checkout = () => {
     const [shippingData, setShippingData] = useState(null);
 
     useEffect(() => {
-        const url = `http://localhost:8000/ServiceProduct/${serviceId}`
+        const url = `https://calm-crag-04570.herokuapp.com/ServiceProduct/${serviceId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrderService(data));
@@ -31,7 +31,7 @@ const Checkout = () => {
               shipment: shippingData, 
               paymentId,
               orderTime: new Date() }
-        const url = 'http://localhost:8000/orderPlace';
+        const url = 'https://calm-crag-04570.herokuapp.com/orderPlace';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

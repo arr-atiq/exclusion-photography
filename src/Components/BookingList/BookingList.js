@@ -7,7 +7,7 @@ const BookingList = () => {
 
     const [booking, setBookingList] = useState([])
     useEffect(() => {
-        const url = 'http://localhost:8000/allPlaceOrders';
+        const url = 'https://calm-crag-04570.herokuapp.com/allPlaceOrders';
         fetch(url)
             .then(res => res.json())
             .then(data => setBookingList(data))

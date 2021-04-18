@@ -16,7 +16,7 @@ const AddService = () => {
             productUrl: productUrl
         }
 
-        const url = `http://localhost:8000/addService`;
+        const url = `https://calm-crag-04570.herokuapp.com/addService`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-Type': 'application/json' },

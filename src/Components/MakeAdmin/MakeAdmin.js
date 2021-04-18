@@ -12,7 +12,7 @@ const MakeAdmin = () => {
         const newAdminData = {
             adminData: data
         }
-        const url = `http://localhost:8000/makeAdmin`;
+        const url = `https://calm-crag-04570.herokuapp.com/makeAdmin`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-Type': 'application/json' },
